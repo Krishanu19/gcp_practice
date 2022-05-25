@@ -1,0 +1,1 @@
+SELECT * FROM `gcp-project-100.practice.test_gsod_new` WHERE station_number= 723630
