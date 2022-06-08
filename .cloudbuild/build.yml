@@ -8,12 +8,12 @@ steps:
       - |
         set -e
         cd datapipeline/
-        docker pull gcr.io/$PROJECT_ID/sbpaa-ca-data-pipeline:latest
-        docker build -t gcr.io/$PROJECT_ID/sbpaa-ca-data-pipeline:latest .
+        docker pull gcr.io/$PROJECT_ID/data-pipeline:latest
+        docker build -t gcr.io/$PROJECT_ID/data-pipeline:latest .
 
 # Stored for caching purposes
 images: [
-    'gcr.io/$PROJECT_ID/sbpaa-ca-data-pipeline:latest',
+    'gcr.io/$PROJECT_ID/data-pipeline:latest',
 ]
 
 timeout: 1200s # 20 minutes
