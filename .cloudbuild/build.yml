@@ -7,9 +7,9 @@ steps:
       - '-c'
       - |
         set -e
-        cd datapipeline/
-        docker pull gcr.io/$PROJECT_ID/data-pipeline:latest
+        cd datapipeline/        
         docker build -t gcr.io/$PROJECT_ID/data-pipeline:latest .
+        docker push gcr.io/$PROJECT_ID/data-pipeline:latest
 
 # Stored for caching purposes
 images: [
