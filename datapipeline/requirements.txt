@@ -1,0 +1,7 @@
+pip==22.0.4
+fastapi==0.75.2
+uvicorn[standard]==0.17.6
+google-cloud-bigquery==2.24.0
+pyarrow==1.0.1
+pandas_gbq==0.15.0
+google-auth==2.6.6
