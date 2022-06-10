@@ -1,0 +1,22 @@
+steps:
+  - id: 'build-docker-image-for-data-pipeline'
+    waitFor: [ '-' ]
+    name: 'gcr.io/cloud-builders/docker:20.10.3'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -e
+        cd datapipeline/        
+        docker build -t gcr.io/$PROJECT_ID/data-pipeline:latest .
+        docker push gcr.io/$PROJECT_ID/data-pipeline:latest
+
+# Stored for caching purposes
+images: [
+    'gcr.io/$PROJECT_ID/data-pipeline:latest',
+]
+
+timeout: 1200s # 20 minutes
+
+options:
+  machineType: 'E2_HIGHCPU_8'
